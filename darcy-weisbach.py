@@ -1,7 +1,11 @@
+#!/usr/bin/python3.5
+
 # darcy-weisbach.py
 # Pressure drop calculator & pump sizing tool for incompressible fluid flow
 
 import math
+import sqlite3
+import physical_properties_builder
 
 pipe_dia = 100      # mm
 vol_flowrate = 60   # m3 h-1
@@ -10,7 +14,7 @@ vol_flowrate = 60   # m3 h-1
 fluid_dens = 1000   # kg m-3
 fluid_visc = 1      # Pa s
 
-def CalcFluidVel (pipe_dia, vol_flowrate) :
+def calcFluidVel (pipe_dia, vol_flowrate) :
     """Calculates fluid velocity.
 
     Args:
@@ -26,7 +30,7 @@ def CalcFluidVel (pipe_dia, vol_flowrate) :
     return fluid_vel
 
 
-def CalcReynoldsNum (fluid_dens, fluid_vel, pipe_dia, fluid_visc) :
+def calcReynoldsNum (fluid_dens, fluid_vel, pipe_dia, fluid_visc) :
     """ Calculates Reynolds Number.
 
     Args:
@@ -42,7 +46,20 @@ def CalcReynoldsNum (fluid_dens, fluid_vel, pipe_dia, fluid_visc) :
     reynolds_num = (fluid_dens * fluid_vel * (pipe_dia/1000)) / fluid_visc
     return reynolds_num
 
-fluid_vel = CalcFluidVel(pipe_dia, vol_flowrate)
-print(CalcReynoldsNum(fluid_dens, fluid_vel, pipe_dia, fluid_visc))
+# Connect to (or create if non-existant) phyprop.db
+conn = sqlite3.connect('phyprop.db')
+dbcon = conn.cursor()
+
+# Create 'fluids' table if non-existant
+dbcon.execute('''CREATE TABLE IF NOT EXISTS fluids
+        (
+        desc text,
+        density decimal,
+        viscosity decimal,
+        vapour_pressure decimal
+        )''')
+
+fluid_vel = calcFluidVel(pipe_dia, vol_flowrate)
+print(calcReynoldsNum(fluid_dens, fluid_vel, pipe_dia, fluid_visc))
 
 
