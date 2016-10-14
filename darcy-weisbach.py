@@ -10,7 +10,8 @@ import physical_properties_builder
 pipe_dia = 100      # mm
 vol_flowrate = 60   # m3 h-1
 
-# Fluid Physical Properties
+# Fluid selection
+fluid_id = (2,)
 fluid_dens = 1000   # kg m-3
 fluid_visc = 1      # Pa s
 
@@ -50,14 +51,10 @@ def calcReynoldsNum (fluid_dens, fluid_vel, pipe_dia, fluid_visc) :
 conn = sqlite3.connect('phyprop.db')
 dbcon = conn.cursor()
 
-# Create 'fluids' table if non-existant
-dbcon.execute('''CREATE TABLE IF NOT EXISTS fluids
-        (
-        desc text,
-        density decimal,
-        viscosity decimal,
-        vapour_pressure decimal
-        )''')
+# Extract physical properties
+dbcon.execute('SELECT * FROM fluids WHERE id=?', fluid_id)
+fluid_props = dbcon.fetchone()
+
 
 fluid_vel = calcFluidVel(pipe_dia, vol_flowrate)
 print(calcReynoldsNum(fluid_dens, fluid_vel, pipe_dia, fluid_visc))

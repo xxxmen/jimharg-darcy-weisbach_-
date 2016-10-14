@@ -5,9 +5,8 @@
 # the physical properties database.
 
 
-def insertFluid (desc, density, viscosity, vapour_pressure) :
-    data = (desc, density, viscosity, vapour_pressure)
-    dbcon.execute('INSERT INTO fluids VALUES (?, ?, ?, ?)', [desc, density, viscosity, vapour_pressure])
+def insertFluid (id, desc, density, viscosity, vapour_pressure) :
+    dbcon.execute('INSERT INTO fluids VALUES (?, ?, ?, ?, ?)', [id, desc, density, viscosity, vapour_pressure])
     conn.commit()
     return
 
@@ -23,17 +22,26 @@ if __name__ == "__main__":
     conn = sqlite3.connect('phyprop.db')
     dbcon = conn.cursor()
 
+    #Drop the table if it exists
+    dbcon.execute('DROP TABLE IF EXISTS fluids')
+
     #Create fluids table, if it doesn't already exist
     # density units: kg m-3
-    # viscosity units: Pa s
+    # Dynamic viscosity units: Pa s
     # vap. pressure units: Pa
-    dbcon.execute('''CREATE table IF NOT EXISTS fluids
-        (desc text, density decimal, viscosity decimal, vapour_pressure decimal)''')
+    dbcon.execute('''CREATE TABLE IF NOT EXISTS fluids
+        (
+        id int,
+        desc text,
+        density decimal,
+        viscosity decimal,
+        vapour_pressure decimal
+        )''')
 
     #Insert some common fluids
-    insertFluid('water, 20DegC', 998.2, 1.002E-3, 2333)
-
+    insertFluid(1, 'water, 15DegC', 999.1, 1.1375E-3, 1706)
+    insertFluid(2, 'water, 20DegC', 998.2, 1.002E-3, 2333)
+    insertFluid(3, 'water, 30DegC', 995.7, 0.798E-3, 4246)
     print(printTable())
-    #dbcon.execute('DROP TABLE fluids')
     conn.close()
 
