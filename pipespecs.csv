@@ -1,0 +1,66 @@
+pipespec_id,source,system,material,roughness,DN,OD,ID,wall_thk,weight_per_m,max_press
+1,Outokumpu,Metric Tru-Bore,SS316,1.5,15,18,15,1.5,0.62,215
+1,Outokumpu,Metric Tru-Bore,SS316,1.5,20,23,20,1.5,0.77,176
+1,Outokumpu,Metric Tru-Bore,SS316,1.5,25,28,25,1.5,1,138
+1,Outokumpu,Metric Tru-Bore,SS316,1.5,32,35,32,1.5,1.26,110
+1,Outokumpu,Metric Tru-Bore,SS316,1.5,40,43,40,1.5,1.56,90
+1,Outokumpu,Metric Tru-Bore,SS316,1.5,50,53,50,1.5,1.93,73
+1,Outokumpu,Metric Tru-Bore,SS316,1.5,65,68,65,1.5,2.5,57
+1,Outokumpu,Metric Tru-Bore,SS316,1.5,80,83,80,1.5,3.06,48
+1,Outokumpu,Metric Tru-Bore,SS316,1.5,100,103,100,1.5,3.81,39
+1,Outokumpu,Metric Tru-Bore,SS316,1.5,125,128,125,1.5,4.75,31
+1,Outokumpu,Metric Tru-Bore,SS316,1.5,150,153,150,1.5,5.69,26
+1,Outokumpu,Metric Tru-Bore,SS316,1.5,200,203,200,1.5,7.57,19
+1,Outokumpu,Metric Tru-Bore,SS316,3.5,250,254,250,2,12.6,21
+1,Outokumpu,Metric Tru-Bore,SS316,3.5,300,304,300,2,15.1,17
+1,Outokumpu,Metric Tru-Bore,SS316,3.5,350,355,350,2.5,17.6,15
+1,Outokumpu,Metric Tru-Bore,SS316,3.5,400,406,400,3,30.3,19
+1,Outokumpu,Metric Tru-Bore,SS316,3.5,450,456,450,3,34,12
+1,Outokumpu,Metric Tru-Bore,SS316,3.5,500,506,500,3,37.8,15
+1,Outokumpu,Metric Tru-Bore,SS316,3.5,600,606,600,3,45.3,9
+1,Outokumpu,Metric Tru-Bore,SS316,3.5,700,708,700,4,52.8,8
+1,Outokumpu,Metric Tru-Bore,SS316,3.5,800,808,800,4,60.3,7
+1,Outokumpu,Metric Tru-Bore,SS316,3.5,900,908,900,4,67.8,6
+1,Outokumpu,Metric Tru-Bore,SS316,3.5,1000,1010,1000,5,75.4,5
+2,Geberit,Mapress,SS316,1.5,12,15,13,1,0.35,0
+2,Geberit,Mapress,SS316,1.5,15,18,16,1,0.42,0
+2,Geberit,Mapress,SS316,1.5,20,22,19.6,1.2,0.62,0
+2,Geberit,Mapress,SS316,1.5,25,28,25.6,1.2,0.8,0
+2,Geberit,Mapress,SS316,1.5,32,35,32,1.5,1.24,0
+2,Geberit,Mapress,SS316,1.5,40,42,39,1.5,1.5,0
+2,Geberit,Mapress,SS316,1.5,50,54,51,1.5,1.95,0
+2,Geberit,Mapress,SS316,1.5,65,76.1,72.1,2,3.66,0
+2,Geberit,Mapress,SS316,1.5,80,88.9,84.9,2,4.3,0
+2,Geberit,Mapress,SS316,1.5,100,108,104,2,5.24,0
+2,Geberit,Mapress,SS304,1.5,12,15,13,1,0.35,0
+2,Geberit,Mapress,SS304,1.5,15,18,16,1,0.42,0
+2,Geberit,Mapress,SS304,1.5,20,22,19.6,1.2,0.62,0
+2,Geberit,Mapress,SS304,1.5,25,28,25.6,1.2,0.8,0
+2,Geberit,Mapress,SS304,1.5,32,35,32,1.5,1.24,0
+2,Geberit,Mapress,SS304,1.5,40,42,39,1.5,1.5,0
+2,Geberit,Mapress,SS304,1.5,50,54,51,1.5,1.95,0
+2,Geberit,Mapress,SS304,1.5,65,76.1,73.1,1.5,2.77,0
+2,Geberit,Mapress,SS304,1.5,80,88.9,85.9,1.5,3.24,0
+2,Geberit,Mapress,SS304,1.5,100,108,104,2,5.24,0
+3,Geberit,Mapress,CS,10,10,12,9.6,1.2,0.32,0
+3,Geberit,Mapress,CS,10,12,15,12.6,1.2,0.41,0
+3,Geberit,Mapress,CS,10,15,18,15.6,1.2,0.5,0
+3,Geberit,Mapress,CS,10,20,22,19,1.5,0.76,0
+3,Geberit,Mapress,CS,10,25,28,25,1.5,0.98,0
+3,Geberit,Mapress,CS,10,32,35,32,1.5,1.24,0
+3,Geberit,Mapress,CS,10,40,42,39,1.5,1.5,0
+3,Geberit,Mapress,CS,10,50,54,51,1.5,1.94,0
+3,Geberit,Mapress,CS,10,65,66.7,63.7,1.5,2.41,0
+3,Geberit,Mapress,CS,10,80,76.1,72.1,2,3.65,0
+3,Geberit,Mapress,CS,10,100,108,104,2,5.23,0
+4,ASME,BPE,SS316,0.5,8,6.35,4.57,0.89,0.12,0
+4,ASME,BPE,SS316,0.5,10,9.53,7.75,0.89,0.19,0
+4,ASME,BPE,SS316,0.5,15,12.7,9.4,1.65,0.45,0
+4,ASME,BPE,SS316,0.5,20,19.05,15.75,1.65,0.71,0
+4,ASME,BPE,SS316,0.5,25,25.4,22.1,1.65,0.97,0
+4,ASME,BPE,SS316,0.5,40,38.1,34.8,1.65,1.49,0
+4,ASME,BPE,SS316,0.5,50,50.8,47.5,1.65,2.01,0
+4,ASME,BPE,SS316,0.5,65,63.5,60.2,1.65,2.52,0
+4,ASME,BPE,SS316,0.5,80,76.2,72.9,1.65,3.04,0
+4,ASME,BPE,SS316,0.5,100,101.6,97.38,2.11,5.19,0
+4,ASME,BPE,SS316,0.5,150,152.4,146.86,2.77,10.25,0

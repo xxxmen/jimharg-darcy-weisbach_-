@@ -1,0 +1,4 @@
+fluid_id,desc,density,viscosity,vap_press
+1,"water, 15DegC",999.1,1.14E-03,1706
+2,"water, 20DegC",998.2,1.00E-03,2333
+3,"water, 30DegC",995.7,7.98E-04,4246
