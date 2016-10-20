@@ -12,8 +12,6 @@ vol_flowrate = 60   # m3 h-1
 
 # Fluid selection
 fluid_id = (2,)
-fluid_dens = 1000   # kg m-3
-fluid_visc = 1      # Pa s
 
 def calcFluidVel (pipe_dia, vol_flowrate) :
     """Calculates fluid velocity.
@@ -47,16 +45,19 @@ def calcReynoldsNum (fluid_dens, fluid_vel, pipe_dia, fluid_visc) :
     reynolds_num = (fluid_dens * fluid_vel * (pipe_dia/1000)) / fluid_visc
     return reynolds_num
 
-# Connect to (or create if non-existant) phyprop.db
+# Connect to phyprop.db and get data
 conn = sqlite3.connect('phyprop.db')
 dbcon = conn.cursor()
-
-# Extract physical properties
 dbcon.execute('SELECT * FROM fluids WHERE id=?', fluid_id)
-fluid_props = dbcon.fetchone()
+fp = dbcon.fetchone()
+names = [description[0] for description in dbcon.description]
 
+# Create dictionary from colnames & physical properties data
+fp = dict(zip(names, fp))
+
+print(fp['density'])
 
 fluid_vel = calcFluidVel(pipe_dia, vol_flowrate)
-print(calcReynoldsNum(fluid_dens, fluid_vel, pipe_dia, fluid_visc))
+print(calcReynoldsNum(fp['density'], fluid_vel, pipe_dia, fp['viscosity']))
 
 
