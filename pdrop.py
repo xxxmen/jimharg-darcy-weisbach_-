@@ -17,6 +17,9 @@ FLUID = (2,)
 PIPESPEC = 1
 DN = 100
 
+# Constants
+GRAVITY = 9.80665
+
 def calc_fluid_vel(pipe_dia, vol_flowrate):
     """
     Calculates fluid velocity.
@@ -67,6 +70,29 @@ def calc_darcy(reyn_num, ps):
         darcy = 64 / reyn_num
 
     return darcy
+
+def convert(mode, value, fp):
+    """
+    Converts between head in metres (m) and pressure in pascals (Pa).
+
+
+    Args:
+    mode - determines operating mode. Either "H2P" for 'head to pressure'
+        or "P2H" for pressure to head.
+    value - process variable to be converted
+    fp - fluid physical properties
+
+    Returns:
+    conv_value - converted value
+    """
+    if mode == "p2h" or mode == "P2H":
+        head = press / (fp['density'] * GRAVITY
+        conv_value = head
+
+    if mode == "h2p" or mode == "H2P":
+        press = head * fp['density'] * GRAVITY
+        conv_value = press
+    return(conv_value)
 
 def main():
     """Main function."""
