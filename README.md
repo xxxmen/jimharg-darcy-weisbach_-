@@ -25,6 +25,8 @@ Copyright (C) Jim Hargreaves
 Consider adding more common process fluids to the physical properties database,
 and add a 'reference' or 'data source' column.
 
+Explore the feasibility of using PCF data from Plant3D Isometric drawings for automatically gathering piping information...! Potential breakthrough.
+
 
 
 
